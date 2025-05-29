@@ -1,0 +1,128 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adebayo Abiodun | Frontend Developer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script defer src="js/main.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <h1 class="logo">Adebayo Abiodun</h1>
+            <ul class="nav-menu">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h2>Hello, I’m Adebayo</h2>
+            <p>Frontend Developer | Creative Coder | Tech-Genie Interview Prep</p>
+            <a href="#projects" class="cta-btn">View My Work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>I’m a 100-level student at Bells University, recently graduated from the Advanced Frontend Certification
+            Course at New Horizons. I build modern, responsive, and visually engaging websites that solve real-world
+            problems.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="project-filters">
+            <button class="filter-btn" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="games">Games</button>
+            <button class="filter-btn" data-filter="ui">UI</button>
+        </div>
+        <div class="projects-grid" id="projects-container">
+            <!-- JavaScript will inject project cards here -->
+        </div>
+        <div class="project-item game guessing">
+            <h3>Number Guessing Game</h3>
+            <p>Try to guess the number between 1 and 100!</p>
+            <div id="guessing-game">
+                <input type="number" id="guess-input" placeholder="Enter guess" />
+                <button onclick="checkGuess()">Guess</button>
+                <p id="guess-message"></p>
+            </div>
+            <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
+        </div>
+        <div class="project-item clock utility">
+            <h3>Live Digital Clock</h3>
+            <p>A real-time updating clock with JavaScript.</p>
+            <div id="digital-clock" style="font-size: 2rem; margin: 1rem 0;">00:00:00</div>
+            <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="skills-list">
+            <div class="skill"><span>HTML5</span>
+                <div class="bar html"></div>
+            </div>
+            <div class="skill"><span>CSS3</span>
+                <div class="bar css"></div>
+            </div>
+            <div class="skill"><span>JavaScript</span>
+                <div class="bar js"></div>
+            </div>
+            <div class="skill"><span>Responsive Design</span>
+                <div class="bar responsive"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <h2>Experience</h2>
+        <ul class="timeline">
+            <li>
+                <h3>New Horizons ICT Resource Center</h3>
+                <p>Frontend Certification Graduate</p>
+                <span>2025</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Name" id="name" required />
+            <input type="email" placeholder="Email" id="email" required />
+            <textarea placeholder="Your Message" id="message" required></textarea>
+            <button type="submit">Send</button>
+            <p id="form-status"></p>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p id="footer-time">© <span id="year"></span> Adebayo Abiodun</p>
+        <button id="back-to-top">↑</button>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+// script.js
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Back to Top button functionality
+  const backToTop = document.getElementById('back-to-top');
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Dynamic year and time
+  const yearSpan = document.getElementById('year');
+  const timeSpan = document.getElementById('time');
+  setInterval(() => {
+    const now = new Date();
+    yearSpan.textContent = now.getFullYear();
+    timeSpan.textContent = now.toLocaleTimeString();
+  }, 1000);
+
+  // Form validation
+  const form = document.getElementById('contact-form');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+
+    if (!name || !email || !message) {
+      alert('Please fill in all fields.');
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      alert('Please enter a valid email address.');
+    } else {
+      alert('Message sent successfully!');
+      form.reset();
+    }
+  });
+
+  // Project filtering
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const projects = document.querySelectorAll('.project-item');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const category = btn.getAttribute('data-category');
+      projects.forEach(project => {
+        if (category === 'all' || project.classList.contains(category)) {
+          project.style.display = 'block';
+        } else {
+          project.style.display = 'none';
+        }
+      });
+    });
+  });
+});
+let secretNumber = Math.floor(Math.random() * 100) + 1;
+function checkGuess() {
+  const guess = Number(document.getElementById('guess-input').value);
+  const message = document.getElementById('guess-message');
+  if (!guess || guess < 1 || guess > 100) {
+    message.textContent = "Please enter a number between 1 and 100.";
+  } else if (guess === secretNumber) {
+    message.textContent = "🎉 Correct! You guessed the number!";
+  } else if (guess > secretNumber) {
+    message.textContent = "Too high. Try again!";
+  } else {
+    message.textContent = "Too low. Try again!";
+  }
+}
+function updateClock() {
+  const now = new Date();
+  const clock = document.getElementById('digital-clock');
+  if (clock) {
+    clock.textContent = now.toLocaleTimeString();
+  }
+}
+setInterval(updateClock, 1000);
+updateClock();

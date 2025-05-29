@@ -1,0 +1,229 @@
+/* styles.css */
+
+:root {
+    --color-bg: #0d1117;
+    --color-text: #ffffff;
+    --color-accent: #ff3c38;
+    --color-secondary: #007bff;
+    --color-white: #f9f9f9;
+    --font-main: 'Inter', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    scroll-behavior: smooth;
+}
+
+.header {
+    background-color: #161b22;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--color-secondary);
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: var(--color-white);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-menu li a:hover {
+    color: var(--color-accent);
+}
+
+.hero-section {
+    background: url('https://source.unsplash.com/1600x900/?technology,dark') no-repeat center center/cover;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 12px;
+    animation: fadeIn 2s ease-in;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    color: var(--color-white);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--color-white);
+    margin: 1rem 0;
+}
+
+.cta-btn {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: var(--color-secondary);
+}
+
+.section {
+    padding: 4rem 2rem;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--color-secondary);
+}
+
+.project-filters {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    background-color: transparent;
+    border: 2px solid var(--color-secondary);
+    color: var(--color-white);
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: var(--color-secondary);
+}
+
+.projects-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.skills-list .skill {
+    margin: 1rem 0;
+}
+
+.skills-list .bar {
+    height: 10px;
+    background: var(--color-secondary);
+    width: 80%;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+}
+
+.timeline {
+    list-style: none;
+    padding: 0;
+}
+
+.timeline li {
+    margin-bottom: 2rem;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    margin: auto;
+}
+
+#contact-form input,
+#contact-form textarea {
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+#contact-form button {
+    background: var(--color-accent);
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#contact-form button:hover {
+    background: var(--color-secondary);
+}
+
+.footer {
+    background: #161b22;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+}
+
+#back-to-top {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background: var(--color-secondary);
+    border: none;
+    color: white;
+    border-radius: 50%;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        background: #0d1117;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        display: none;
+    }
+}
